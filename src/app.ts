@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from "express";
 import path from "path";
 import { LogsRoutes } from "./app/src/modules/Logs/logs.routes";
-import { errorlogger } from "./app/src/shared/logger";
+import { errorLogger } from "./app/src/shared/logger";
 
 const app: Application = express();
 
@@ -37,7 +37,7 @@ app.use("/logs", LogsRoutes);
 // Error handler
 app.use((err: Error, req: Request, res: Response, next: any) => {
   console.error(err);
-  errorlogger.error(err);
+  errorLogger.error(err);
 
   res.status(500).send(`
     <html>

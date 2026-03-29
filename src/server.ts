@@ -1,6 +1,6 @@
 import { Server } from "http";
 import app from "./app";
-import { errorlogger, logger } from "./app/src/shared/logger";
+import { errorLogger, logger } from "./app/src/shared/logger";
 
 let server: Server;
 
@@ -12,7 +12,7 @@ async function main() {
     });
   } catch (err) {
     console.log(err);
-    errorlogger.error(err);
+    errorLogger.error(err);
   }
 }
 
@@ -20,7 +20,7 @@ main();
 
 process.on("unhandledRejection", (err) => {
   console.log(`😈 unahandledRejection is detected , shutting down ...`, err);
-  errorlogger.error(err);
+  errorLogger.error(err);
   if (server) {
     server.close(() => {
       process.exit(1);
@@ -31,6 +31,6 @@ process.on("unhandledRejection", (err) => {
 
 process.on("uncaughtException", () => {
   console.log(`😈 uncaughtException is detected , shutting down ...`);
-  errorlogger.error("uncaughtException is detected");
+  errorLogger.error("uncaughtException is detected");
   process.exit(1);
 });
