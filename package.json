@@ -1,5 +1,5 @@
 {
-  "name": "docker-with-typescipt-backend",
+  "name": "docker-with-typescript-backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
