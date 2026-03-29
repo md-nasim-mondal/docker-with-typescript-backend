@@ -25,7 +25,7 @@ const logger = createLogger({
         "logs",
         "winston",
         "successes",
-        "docker-%DATE%-success.log",
+        "docker-%DATE%-success.log"
       ),
       datePattern: "YYYY-MM-DD-HH-mm-ss",
       zippedArchive: false,
@@ -35,7 +35,7 @@ const logger = createLogger({
   ],
 });
 
-const errorLogger = createLogger({
+const errorlogger = createLogger({
   level: "error",
   format: combine(label({ label: "DOCKER" }), timestamp(), logFormat),
   transports: [
@@ -46,7 +46,7 @@ const errorLogger = createLogger({
         "logs",
         "winston",
         "errors",
-        "docker-%DATE%-error.log",
+        "docker-%DATE%-error.log"
       ),
       datePattern: "YYYY-MM-DD-HH",
       zippedArchive: false,
@@ -56,4 +56,4 @@ const errorLogger = createLogger({
   ],
 });
 
-export { errorLogger, logger };
+export { errorlogger, logger };
