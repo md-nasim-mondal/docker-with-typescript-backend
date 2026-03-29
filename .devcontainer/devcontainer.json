@@ -17,6 +17,8 @@
     "ts-docker-container",
     "-p",
     "5000:5000",
+    "--env-file",
+    ".env",
     "--rm" // Automatically remove the container after exiting VS Code
   ],
   "postCreateCommand": "npm install"
